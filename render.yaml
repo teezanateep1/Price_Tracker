@@ -5,7 +5,6 @@ services:
     buildCommand: npm install && npm run build
     startCommand: npm run start
     rootDir: frontend
-    autoDeploy: true
 
   - type: web
     name: price-tracker-backend
@@ -13,4 +12,3 @@ services:
     buildCommand: go build -o main .
     startCommand: ./main
     rootDir: backend
-    autoDeploy: true
