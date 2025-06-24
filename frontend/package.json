@@ -1,4 +1,0 @@
-{
-  "name": "shopee-alert-frontend",
-  "scripts": {"start": "next start"}
-}
