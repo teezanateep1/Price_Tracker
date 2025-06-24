@@ -1,22 +1,16 @@
 services:
   - type: web
-    name: shopee-alert-backend
-    env: go
-    plan: free
-    rootDir: backend
-    buildCommand: "go build -o main ."
-    startCommand: "./main"
-    envVars:
-      - key: DB_PATH
-        value: ./data.sqlite
-
-  - type: web
     name: shopee-alert-frontend
     env: node
-    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
     rootDir: frontend
-    buildCommand: "npm install && npm run build"
-    startCommand: "npm run start"
-    envVars:
-      - key: NEXT_PUBLIC_BACKEND_URL
-        value: https://shopee-alert-backend.onrender.com
+    plan: free
+
+  - type: web
+    name: shopee-alert-backend
+    env: go
+    buildCommand: go build -o app main.go
+    startCommand: ./app
+    rootDir: backend
+    plan: free
