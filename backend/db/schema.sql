@@ -1,0 +1,1 @@
+-- SQLite schema with product & price_history
